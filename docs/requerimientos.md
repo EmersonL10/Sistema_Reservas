@@ -72,7 +72,7 @@ Entrada: cliente, servicio, fecha y hora de inicio.
 
 Resultado esperado:
 - Verificar que el cliente y el servicio existan.
-- Validar fecha y hora y rechazar inicios anteriores al momento actual.
+- Validar fecha y hora y exigir un inicio posterior al momento actual.
 - Calcular la finalización con la duración del servicio.
 - Comprobar disponibilidad.
 - Crear una reserva con identificador único y estado Confirmada.
