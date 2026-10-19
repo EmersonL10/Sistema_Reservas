@@ -67,7 +67,17 @@ Requerimiento → Issue → Responsable → Commits → Revisión → Integraci�
 
 ## Tecnologías
 
-Pendientes de selección.
+- Python y Flask para el backend.
+- HTML, CSS y Jinja para la interfaz.
+- MySQL 8.0 con InnoDB para persistencia.
+- MySQL Connector/Python para conexión a datos.
+- MySQL Workbench para administración.
+- unittest para pruebas automatizadas.
+
+Arquitectura: [docs/arquitectura.md](docs/arquitectura.md).
+
+La instalación y el arranque de la aplicación permanecen
+pendientes de verificación.
 
 ## Estado actual
 

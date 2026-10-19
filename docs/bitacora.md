@@ -61,3 +61,32 @@ Cada entrada incluirá:
 - Referencias reales a commits, Issues y Pull Requests.
 
 Los hitos se registrarán cuando ocurran, sin anticipar resultados.
+
+## Cierre de ACT-01 e inicio de ACT-02 — 19/10/2026
+
+### Requisitos integrados
+
+- PR: https://github.com/EmersonL10/Sistema_Reservas/pull/21
+- Commit inicial de documentación: b94a330.
+- Corrección de validación temporal: 6e9cdd4.
+- Ampliación de disponibilidad y alternativas: b932527.
+- Autorrevisión previa a la integración:
+  https://github.com/EmersonL10/Sistema_Reservas/pull/21#issuecomment-6277977528
+- Commit de merge: 5a30164b1b44f36bf2b7e2ddca83baac00dd5d67.
+- Integración: 19/10/2026 a las 16:39, hora de Lima.
+- Se verificó develop sincronizado y sin cambios pendientes.
+- ACT-01 aparece cerrada y en Hecho en el tablero.
+- El cierre corresponde a la especificación, no a código funcional.
+
+### Selección tecnológica de ACT-02
+
+- Rama: docs/act-02-arquitectura.
+- Python observado: 3.13.14.
+- Node.js observado: v24.18.0; no se requiere para la solución elegida.
+- MySQL verificado mediante SELECT VERSION(): 8.0.46.
+- Se sustituyó la propuesta inicial de SQLite por MySQL
+  por elección del responsable.
+- Se seleccionaron Flask, HTML/CSS, Jinja y MySQL Connector/Python.
+- Se redactó docs/arquitectura.md y se actualizó README.md.
+- La instalación del framework, del conector y el arranque
+  permanecen pendientes; no se afirma compatibilidad verificada.
