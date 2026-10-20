@@ -88,3 +88,20 @@ Las funcionalidades todavía no están implementadas.
 
 Las instrucciones de instalación, ejecución y pruebas se incorporarán
 cuando se seleccione la tecnología y exista una implementación verificable.
+
+## Arranque de la aplicación base
+
+Requiere Python y un entorno virtual.
+
+En PowerShell, desde la raíz del proyecto:
+
+    python -m venv .venv
+    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+    .\.venv\Scripts\python.exe -m flask --app src.reservas run --host 127.0.0.1
+
+Abrir http://127.0.0.1:5000.
+
+Este arranque muestra una página inicial; todavía no utiliza MySQL.
+La creación del esquema y la conexión se incorporarán en ACT-04.
+
+Flujo de trabajo: [docs/flujo-git.md](docs/flujo-git.md).
