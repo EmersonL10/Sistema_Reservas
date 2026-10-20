@@ -4,6 +4,7 @@ import click
 import mysql.connector
 from dotenv import load_dotenv
 from flask import Flask
+from .routes.clientes import bp as clientes_bp
 
 from .config import get_database_config
 from .db import get_connection
@@ -15,6 +16,8 @@ def create_app():
 
     app = Flask(__name__)
     app.config["MYSQL"] = get_database_config()
+
+    app.register_blueprint(clientes_bp)
 
     @app.get("/")
     def index():

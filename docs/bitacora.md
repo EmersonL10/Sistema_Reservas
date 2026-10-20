@@ -120,3 +120,14 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
   de la variable utilizada para inspeccionar la excepción.
 - Las pruebas revierten sus registros mediante rollback.
 - La revisión del Pull Request y la integración siguen pendientes.
+## Desarrollo y verificación de ACT-05 — 20/10/2026
+
+- Se implementaron repositorio, validaciones y rutas de clientes.
+- Se comprobaron registro, modificación, listado y consulta individual.
+- Se verificaron respuestas 400 para datos inválidos y 404 para
+  identificadores inexistentes.
+- Se comprobó que una modificación inválida no alteró el cliente.
+- El cliente ficticio id 13 persistió desde un nuevo proceso Python.
+- Las cinco pruebas de integridad existentes volvieron a pasar.
+- Resultados documentados en docs/pruebas-clientes.md.
+- Revisión e integración del módulo pendientes.
