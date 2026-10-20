@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from flask import Flask
 from .routes.clientes import bp as clientes_bp
 
+from .routes.reservas import bp as reservas_bp
 from .routes.servicios import bp as servicios_bp
 from .config import get_database_config
 from .db import get_connection
@@ -18,6 +19,7 @@ def create_app():
     app = Flask(__name__)
     app.config["MYSQL"] = get_database_config()
 
+    app.register_blueprint(reservas_bp)
     app.register_blueprint(servicios_bp)
     app.register_blueprint(clientes_bp)
 
