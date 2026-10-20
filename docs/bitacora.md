@@ -183,3 +183,18 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - El ensayo conservó datos ficticios en el esquema local.
 - La confirmación visual permanece pendiente de ACT-09.
 - Revisión e integración pendientes.
+  ## Desarrollo y verificación de ACT-09 — 20/10/2026
+
+- Se implementó la interfaz de clientes, servicios y reservas.
+- Las tres tablas cargaron datos de MySQL.
+- Se incorporaron edición de clientes, registro de servicios,
+  registro de reservas y cancelación con confirmación.
+- Durante la prueba visual se detectó falta de indicación
+  de la alternativa de horario seleccionada.
+- Se corrigió mediante resaltado, aria-pressed y mensaje de selección.
+- El responsable confirmó el funcionamiento de la selección
+  y del recorrido visual solicitado.
+- Se solicitaron comprobaciones a 360 y 1280 px y navegación
+  por teclado; los resultados específicos deben registrarse
+  antes de dar esos criterios por verificados.
+- Revisión e integración pendientes.

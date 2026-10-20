@@ -3,9 +3,9 @@ from pathlib import Path
 import click
 import mysql.connector
 from dotenv import load_dotenv
-from flask import Flask
-from .routes.clientes import bp as clientes_bp
+from flask import Flask, render_template
 
+from .routes.clientes import bp as clientes_bp
 from .routes.reservas import bp as reservas_bp
 from .routes.servicios import bp as servicios_bp
 from .config import get_database_config
@@ -25,11 +25,7 @@ def create_app():
 
     @app.get("/")
     def index():
-        return (
-            "<h1>Sistema de Gestión de Reservas</h1>"
-            "<p>Aplicación base en funcionamiento.</p>"
-            "<p>Clientes, servicios y reservas: pendientes de implementación.</p>"
-        )
+        return render_template("index.html")
 
     @app.cli.command("check-db")
     def check_db():
