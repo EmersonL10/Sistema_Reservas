@@ -90,7 +90,6 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Se redactó docs/arquitectura.md y se actualizó README.md.
 - La instalación del framework, del conector y el arranque
   permanecen pendientes; no se afirma compatibilidad verificada.
-
   ## Implementación base de ACT-03
 
 - Se preparó la rama feature/act-03-estructura-base.
@@ -102,3 +101,7 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Se corrigió la configuración para leer variables después de cargar .env.
 - El responsable confirmó un nuevo arranque satisfactorio.
 - La base de datos y la conexión todavía no están implementadas.
+- Durante la revisión del PR #23 se detectó una contraseña escrita
+  en la plantilla y en el valor predeterminado de configuración.
+- Se corrigieron ambos archivos para utilizar un valor vacío.
+- La revisión del PR continúa pendiente de comprobar la corrección.
