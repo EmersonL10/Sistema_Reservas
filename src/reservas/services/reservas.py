@@ -40,9 +40,14 @@ def validar_reserva(payload):
     if inicio_local.year < 1000:
         raise ReservaError("La fecha está fuera del rango permitido.")
 
-    inicio_utc = inicio_local.astimezone(timezone.utc).replace(
-        tzinfo=None
-    )
+    try:
+        inicio_utc = inicio_local.astimezone(timezone.utc).replace(
+            tzinfo=None
+        )
+    except (OverflowError, ValueError):
+        raise ReservaError(
+            "La fecha está fuera del rango permitido."
+        ) from None
 
     if inicio_utc <= ahora_utc():
         raise ReservaError("El inicio debe ser posterior al momento actual.")

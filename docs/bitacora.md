@@ -164,3 +164,8 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - La concurrencia se comprobó en un escenario de dos solicitudes;
   no constituye una prueba de carga.
 - Revisión e integración pendientes.
+- - Durante la revisión del PR #27 se detectó un posible desbordamiento
+  al convertir fechas extremas de Lima a UTC.
+- Se incorporó un error de validación controlado y dos pruebas
+  unitarias de fechas.
+- La suite ejecutó siete pruebas con resultado satisfactorio.
