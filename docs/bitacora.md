@@ -131,3 +131,18 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Las cinco pruebas de integridad existentes volvieron a pasar.
 - Resultados documentados en docs/pruebas-clientes.md.
 - Revisión e integración del módulo pendientes.
+## Desarrollo y verificación de ACT-06 — 20/10/2026
+
+- Se implementaron registro, listado y consulta individual de servicios.
+- Se utilizó Decimal para validar y conservar importes exactos.
+- El precio se devuelve como texto decimal con dos posiciones.
+- El servicio ficticio id 16 se registró con precio 50.25
+  y duración de 60 minutos.
+- Once entradas inválidas fueron rechazadas sin insertar registros.
+- La consulta de un servicio inexistente devolvió HTTP 404.
+- Se verificó persistencia entre instancias y desde un nuevo proceso.
+- Las cinco pruebas de integridad volvieron a pasar.
+- El ensayo reproducible está en tests/verificar_servicios.py.
+- El ensayo conserva un servicio ficticio por ejecución.
+- No se reinició MySQL ni se utilizó un esquema de pruebas separado.
+- Revisión e integración pendientes.
