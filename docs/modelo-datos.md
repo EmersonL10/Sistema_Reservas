@@ -39,10 +39,52 @@
   database=sistema_reservas; user=reservas_app@localhost;
   timezone=+00:00; agenda=1.
 
-## Pendiente
+## Diagrama entidad-relación
 
-Ejecutar pruebas de integridad con datos ficticios y comprobar
-los escenarios exigidos por ACT-04 antes de cerrar el Issue.
+```mermaid
+erDiagram
+    CLIENTES ||--o{ RESERVAS : realiza
+    SERVICIOS ||--o{ RESERVAS : corresponde
+    AGENDA ||--o{ RESERVAS : organiza
+
+    CLIENTES {
+        bigint id PK
+        varchar nombre
+        varchar telefono
+        varchar email
+    }
+
+    SERVICIOS {
+        bigint id PK
+        varchar nombre
+        decimal precio
+        smallint duracion_minutos
+    }
+
+    AGENDA {
+        tinyint id PK
+        varchar nombre
+    }
+
+    RESERVAS {
+        bigint id PK
+        tinyint agenda_id FK
+        bigint cliente_id FK
+        bigint servicio_id FK
+        datetime inicio_utc
+        datetime fin_utc
+        decimal precio_aplicado
+        smallint duracion_aplicada_minutos
+        varchar estado
+        datetime cancelado_en
+    }
+```
+
+## Verificaciones pendientes
+
+Disponibilidad y concurrencia se verificarán en ACT-07.
+El aislamiento de pruebas en un esquema separado y la persistencia
+tras reinicio todavía no se han comprobado.
 
 ## Pruebas de integridad ejecutadas — 20/10/2026
 
