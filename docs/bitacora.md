@@ -105,3 +105,18 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
   en la plantilla y en el valor predeterminado de configuración.
 - Se corrigieron ambos archivos para utilizar un valor vacío.
 - La revisión del PR continúa pendiente de comprobar la corrección.
+## Implementación y verificación de ACT-04 — 20/10/2026
+
+- Se creó el esquema sistema_reservas y sus cuatro tablas.
+- Se corrigieron advertencias del operador BINARY utilizando CAST.
+- Se verificaron las restricciones activas y la agenda principal.
+- Se configuró reservas_app con SELECT, INSERT y UPDATE.
+- Se resolvió el rechazo de autenticación haciendo coincidir
+  la contraseña configurada en MySQL y el archivo local .env.
+- Se verificó la conexión desde Python y el comando Flask check-db.
+- Se ejecutaron cinco pruebas de integridad con resultado OK.
+- Durante las pruebas se corrigieron el descubrimiento del archivo,
+  la expectativa del código de error referencial y la ubicación
+  de la variable utilizada para inspeccionar la excepción.
+- Las pruebas revierten sus registros mediante rollback.
+- La revisión del Pull Request y la integración siguen pendientes.
