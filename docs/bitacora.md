@@ -146,3 +146,21 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - El ensayo conserva un servicio ficticio por ejecución.
 - No se reinició MySQL ni se utilizó un esquema de pruebas separado.
 - Revisión e integración pendientes.
+## Desarrollo y verificación de ACT-07 — 20/10/2026
+
+- Se implementó POST /api/reservas.
+- Se validaron identificadores, fecha futura y conversión Lima/UTC.
+- Se conservaron precio y duración aplicados a la reserva.
+- Se implementó bloqueo transaccional de la agenda antes de
+  comprobar disponibilidad e insertar.
+- El ensayo tests/verificar_reservas.py terminó satisfactoriamente.
+- Reserva inicial generada: id 19.
+- Cliente y servicio ficticios generados: ambos con id 20.
+- Se verificaron superposición rechazada, cinco alternativas,
+  reserva consecutiva y entradas inválidas.
+- Dos solicitudes concurrentes generaron una respuesta 201,
+  una respuesta 409 y una sola reserva para el intervalo.
+- El ensayo conservó datos ficticios en el esquema local.
+- La concurrencia se comprobó en un escenario de dos solicitudes;
+  no constituye una prueba de carga.
+- Revisión e integración pendientes.
