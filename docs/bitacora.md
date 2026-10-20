@@ -169,3 +169,17 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Se incorporó un error de validación controlado y dos pruebas
   unitarias de fechas.
 - La suite ejecutó siete pruebas con resultado satisfactorio.
+## Desarrollo y verificación de ACT-08 — 20/10/2026
+
+- Se implementaron listado, consulta y cancelación de reservas.
+- La cancelación utiliza el mismo bloqueo de agenda que el registro.
+- El ensayo tests/verificar_cancelacion.py terminó satisfactoriamente.
+- Se verificó cancelación repetida sin cambiar su fecha original.
+- La reserva 28 quedó cancelada y la 29 fue aceptada en su horario.
+- Se rechazó una cancelación posterior al inicio mediante reloj simulado.
+- Las reservas inexistentes devolvieron HTTP 404.
+- Se verificó la cancelación persistida desde un nuevo proceso.
+- Las siete pruebas automatizadas existentes volvieron a pasar.
+- El ensayo conservó datos ficticios en el esquema local.
+- La confirmación visual permanece pendiente de ACT-09.
+- Revisión e integración pendientes.
