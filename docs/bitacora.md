@@ -198,3 +198,13 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
   por teclado; los resultados específicos deben registrarse
   antes de dar esos criterios por verificados.
 - Revisión e integración pendientes.
+  ## Validación integral de ACT-10 — 21/10/2026
+
+- Se inició la rama test/act-10-validacion-integral desde 1471738.
+- Se verificaron conexión y sintaxis JavaScript.
+- Se agregaron ocho pruebas de API en el commit 19be696.
+- La suite completa ejecutó 15 pruebas con resultado OK.
+- Los errores MySQL 2003 fueron simulados deliberadamente.
+- Se consolidaron cobertura, evidencias y limitaciones
+  en docs/pruebas.md.
+- Revisión e integración de ACT-10 pendientes.
