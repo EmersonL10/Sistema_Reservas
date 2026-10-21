@@ -215,3 +215,12 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Se documentaron corrección, comentario, fechas y commit de integración
   en docs/revisiones.md.
 - Se distinguió autorrevisión de aprobación independiente.
+## Conflicto controlado — ACT-12 — 21/10/2026
+
+- Se preparó una base documental mediante PR #33.
+- Las variantes A y B partieron de 284a0a0.
+- Tras integrar A mediante PR #34, se produjo un conflicto real en B.
+- Se combinaron ambas aportaciones y se eliminaron los marcadores.
+- La resolución se publicó en d16c07b.
+- Procedimiento y evidencias en docs/resolucion-conflicto.md.
+- Ejercicio individual; integración final del PR #35 pendiente.

@@ -5,7 +5,7 @@ entre ramas del mismo autor. No define reglas de la aplicación.
 
 ## Texto de trabajo
 
-Mensaje de confirmación: Reserva confirmada correctamente.
+Mensaje de confirmación: Reserva confirmada correctamente; consulte los detalles de su atención.
 
 ## Contexto
 
