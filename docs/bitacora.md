@@ -208,3 +208,10 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Se consolidaron cobertura, evidencias y limitaciones
   en docs/pruebas.md.
 - Revisión e integración de ACT-10 pendientes.
+## Consolidación de revisiones — ACT-11 — 21/10/2026
+
+- Se consultaron los PR integrados y el detalle del PR #23.
+- Se verificó que su autorrevisión precedió al merge.
+- Se documentaron corrección, comentario, fechas y commit de integración
+  en docs/revisiones.md.
+- Se distinguió autorrevisión de aprobación independiente.
