@@ -224,3 +224,12 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - La resolución se publicó en d16c07b.
 - Procedimiento y evidencias en docs/resolucion-conflicto.md.
 - Ejercicio individual; integración final del PR #35 pendiente.
+## Consolidación de trazabilidad — ACT-13 — 21/10/2026
+
+- Se relacionaron RF-01 a RF-08 con actividades, responsable,
+  commits, PR, integraciones y evidencias de prueba.
+- Se verificó la secuencia temporal de desarrollo, autorrevisión
+  e integración del PR #25.
+- Se distinguieron las mejoras futuras y los límites de verificación.
+- Matriz registrada en docs/trazabilidad.md.
+- Revisión e integración de ACT-13 pendientes.
