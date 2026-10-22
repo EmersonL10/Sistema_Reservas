@@ -105,3 +105,14 @@ Este arranque muestra una página inicial; todavía no utiliza MySQL.
 La creación del esquema y la conexión se incorporarán en ACT-04.
 
 Flujo de trabajo: [docs/flujo-git.md](docs/flujo-git.md).
+## Instalación completa
+
+Consultar [docs/instalacion.md](docs/instalacion.md) para preparar
+MySQL, configurar el entorno, ejecutar la aplicación y sus pruebas.
+
+## Evidencias técnicas
+
+- [Resultados de pruebas](docs/pruebas.md).
+- [Trazabilidad](docs/trazabilidad.md).
+- [Revisiones](docs/revisiones.md).
+- [Resolución del conflicto](docs/resolucion-conflicto.md).
