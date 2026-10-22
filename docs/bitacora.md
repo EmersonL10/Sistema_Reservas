@@ -233,3 +233,13 @@ Los hitos se registrarán cuando ocurran, sin anticipar resultados.
 - Se distinguieron las mejoras futuras y los límites de verificación.
 - Matriz registrada en docs/trazabilidad.md.
 - Revisión e integración de ACT-13 pendientes.
+  ## Verificación de entrega — ACT-14 — 21/10/2026
+
+- Se publicó la guía de instalación en 262a560.
+- Se verificó una copia nueva con entorno virtual independiente.
+- pip check y check-db resultaron satisfactorios.
+- La suite ejecutó 15 pruebas con resultado OK.
+- Se comprobó el arranque visual en el puerto 5001.
+- Se reutilizó el esquema MySQL existente.
+- Resultados y límites en docs/verificacion-entrega.md.
+- Integración de entrega y publicación pendientes.
