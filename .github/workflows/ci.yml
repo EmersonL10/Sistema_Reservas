@@ -79,6 +79,4 @@ jobs:
 
       - name: Ejecutar pruebas automatizadas
         run: python -m unittest discover -s tests -p "test_*.py" -v
-
-      - name: Reto CI - fallo intencional
-        run: python -c "raise RuntimeError('Fallo intencional del reto CI')"
+        
