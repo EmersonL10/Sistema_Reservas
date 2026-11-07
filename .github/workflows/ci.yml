@@ -1,0 +1,82 @@
+name: CI Sistema Reservas
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - ci/reto-integracion-continua
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    name: Verificar proyecto
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    env:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: "3307"
+      MYSQL_USER: reservas_app
+      MYSQL_PASSWORD: ci_app_password
+      MYSQL_DATABASE: sistema_reservas
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ci_root_password
+          MYSQL_DATABASE: sistema_reservas
+          MYSQL_USER: reservas_app
+          MYSQL_PASSWORD: ci_app_password
+        ports:
+          - 3307:3306
+        options: >-
+          --health-cmd="mysqladmin ping --host=127.0.0.1 --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=12
+
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Preparar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      - name: Comprobar dependencias
+        run: python -m pip check
+
+      - name: Comprobar sintaxis de Python
+        run: python -m compileall -q src tests
+
+      - name: Crear las tablas de pruebas
+        env:
+          MYSQL_CONTAINER_ID: ${{ job.services.mysql.id }}
+        run: |
+          docker exec -i \
+            -e MYSQL_PWD=ci_root_password \
+            "$MYSQL_CONTAINER_ID" \
+            mysql --user=root --default-character-set=utf8mb4 \
+            < database/schema.sql
+
+      - name: Verificar conexion y agenda
+        run: python -m flask --app src.reservas check-db
+
+      - name: Ejecutar pruebas automatizadas
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+        
