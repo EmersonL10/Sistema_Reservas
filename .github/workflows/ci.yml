@@ -79,4 +79,46 @@ jobs:
 
       - name: Ejecutar pruebas automatizadas
         run: python -m unittest discover -s tests -p "test_*.py" -v
-        
+
+  build:
+    name: Empaquetar aplicacion
+    needs: verificar
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Crear el paquete
+        run: |
+          mkdir -p dist
+          git archive --format=tar.gz --output=dist/sistema_reservas.tar.gz HEAD  src database requirements.txt
+
+      - name: Guardar el paquete como artefacto
+        uses: actions/upload-artifact@v7
+        with:
+          name: sistema-reservas
+          path: dist/sistema_reservas.tar.gz
+          if-no-files-found: error
+
+  deploy:
+    name: Simular despliegue
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Descargar el paquete
+        uses: actions/download-artifact@v8
+        with:
+          name: sistema-reservas
+          path: dist
+
+      - name: Desplegar en una carpeta temporal
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_SIMULADO_TOKEN }}
+        run: |
+          test -n "$DEPLOY_TOKEN" || { echo "Falta el secret de despliegue simulado" >&2; exit 1; }
+          destino="$(mktemp -d)"
+          tar -xzf dist/sistema_reservas.tar.gz -C "$destino"
+          test -f "$destino/src/reservas/__init__.py"
+          echo "Despliegue simulado correcto"
