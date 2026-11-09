@@ -80,11 +80,6 @@ jobs:
       - name: Ejecutar pruebas automatizadas
         run: python -m unittest discover -s tests -p "test_*.py" -v
 
-      - name: Provocar fallo controlado de CI/CD
-        run: |
-          echo "Fallo intencional para comprobar las dependencias entre jobs" >&2
-          exit 1
-
   build:
     name: Empaquetar aplicacion
     needs: verificar
